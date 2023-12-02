@@ -1,6 +1,7 @@
 import { Box, Button, Container, Typography, useTheme } from "@mui/material";
 import React, { useContext, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import MetalTypeItem from "./CalcItems/MetalTypeItem";
 import { useTranslation } from "react-i18next";
 import MaterialTypeItem from "./CalcItems/MaterialTypeItem";
@@ -29,13 +30,20 @@ const CalculatorView = () => {
       calcStage === 4
     ) {
       setCalcStage((prev) => prev + 2);
-    } else if (
-      calcValCtx.metalType === MetalTypes.aluminum &&
-      calcStage === 0
-    ) {
-      setCalcStage((prev) => prev + 2);
     } else {
       nextStage();
+    }
+  };
+
+  const handleBack = () => {
+    if (
+      calcValCtx.installationType !== InstallationTypes.D1 &&
+      calcValCtx.installationType !== InstallationTypes.D2 &&
+      calcStage === 6
+    ) {
+      setCalcStage((prev) => prev - 2);
+    } else {
+      prevStage();
     }
   };
 
@@ -78,16 +86,29 @@ const CalculatorView = () => {
             paddingLeft: 4,
             paddingRight: 4,
             paddingBottom: 4,
+            gap: 2,
           }}
         >
-          <Button
-            variant="contained"
-            color="secondary"
-            endIcon={<ChevronRightIcon />}
-            onClick={handleClick}
-          >
-            {t("common:next")}
-          </Button>
+          {calcStage > 0 && (
+            <Button
+              variant="text"
+              color="secondary"
+              startIcon={<ChevronLeftIcon />}
+              onClick={handleBack}
+            >
+              {t("common:back")}
+            </Button>
+          )}
+          {calcStage < 7 && (
+            <Button
+              variant="contained"
+              color="secondary"
+              endIcon={<ChevronRightIcon />}
+              onClick={handleClick}
+            >
+              {t("common:next")}
+            </Button>
+          )}
         </Box>
       </Box>
     </Container>

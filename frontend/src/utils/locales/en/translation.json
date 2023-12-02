@@ -9,8 +9,6 @@
   "installationMethod": "Installation method",
   "ambientTemp": "Ambient temperature",
   "groundResistivity": "Thermal resistivity of the ground",
-  "loadCurrent": "Load current",
-  "loadPower": "Load power",
   "3a": "Single-phase system (2 loaded cores)",
   "3b": "Three-phase multi-core system (4 cores, 3 loaded cores)",
   "3c": "Three-phase single-core system (3 loaded cores)",
@@ -26,5 +24,10 @@
   "pvc": "PVC - polyvinyl chloride",
   "xlpe": "XLPE - cross-linked polyethylene",
   "b2ca": "B2ca - halogen-free material class B2ca",
-  "installationType": "Installation type"
+  "installationType": "Installation type",
+  "currentLoad": "Load current",
+  "powerLoad": "Load power",
+  "load": "Load",
+  "aluminum": "Aluminum",
+  "numOfWires/circuits": "Number of circuits/wires in 1 bundle"
 }

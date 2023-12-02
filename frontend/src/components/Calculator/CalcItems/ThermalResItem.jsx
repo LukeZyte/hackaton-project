@@ -6,10 +6,12 @@ import {
   InstallationTypes,
   ThermalResTypes,
 } from "../../../utils/enums/calculator-enums";
+import { useTranslation } from "react-i18next";
 
 const ThermalResItem = () => {
   const theme = useTheme();
   const calcValCtx = useContext(CalculatorValuesContext);
+  const {t} = useTranslation();
 
   const selectThermalResHandler = (event) => {
     calcValCtx.changeThermalResGround(event.target.value);
@@ -18,7 +20,7 @@ const ThermalResItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Rezystywność cieplna gruntu</Typography>
+      <Typography>{t("groundResistivity")}</Typography>
       <Select
         value={calcValCtx.thermalResGround}
         onChange={selectThermalResHandler}

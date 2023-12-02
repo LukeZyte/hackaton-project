@@ -9,8 +9,6 @@
   "installationMethod": "Sposób instalacji",
   "ambientTemp": "Temperatura otoczenia",
   "groundResistivity": "Rezystywność cieplna gruntu",
-  "loadCurrent": "Prąd obciążenia",
-  "loadPower": "Moc obciążenia",
   "3a": "Układ jednofazowy (2 żyły obciążone)",
   "3b": "Układ trójfazowy wielożyłowy (4 żyły, 3 żyły obciążone)",
   "3c": "Układ trójfazowy jednożyłowy (3 żyły obciążone)",
@@ -28,5 +26,8 @@
   "b2ca": "B2ca - tworzywo bezhalogenowe klasy B2ca",
   "installationType": "Sposób instalacji",
   "currentLoad": "Prąd obciążenia",
-  "powerLoad": "Moc obciążenia"
+  "powerLoad": "Moc obciążenia",
+  "load": "Obciążenie",
+  "aluminum": "Aluminium",
+  "numOfWires/circuits": "Ilość obwodów/przewodów znajdujących się w 1 wiązce"
 }

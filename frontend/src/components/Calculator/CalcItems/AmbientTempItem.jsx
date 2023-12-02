@@ -6,10 +6,13 @@ import {
   InstallationTypes,
   MaterialTypes,
 } from "../../../utils/enums/calculator-enums";
+import { useTranslation } from "react-i18next";
+
 
 const AmbientTempItem = () => {
   const theme = useTheme();
   const calcValCtx = useContext(CalculatorValuesContext);
+  const {t} = useTranslation();
 
   const selectAmbientTempHandler = (event) => {
     calcValCtx.changeAmbientTemp(AmbientTempTypes[event.target.value]);
@@ -28,7 +31,7 @@ const AmbientTempItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Temperatura otoczenia</Typography>
+      <Typography>{t("ambientTemp")}</Typography>
       <Select
         value={calcValCtx.ambientTemp}
         onChange={selectAmbientTempHandler}

@@ -13,7 +13,7 @@ import {
 export const CalculatorValuesContext = createContext({
   metalType: null,
   materialType: null,
-  numLoadedVeins: null,
+  numLoadedCores: null,
   installationType: null,
   ambientTemp: null,
   thermalResGround: null,
@@ -21,7 +21,7 @@ export const CalculatorValuesContext = createContext({
   loadType: null,
   changeMetalType: () => {},
   changeMaterialType: () => {},
-  changeNumLoadedVeins: () => {},
+  changeNumLoadedCores: () => {},
   changeInstallationType: () => {},
   changeAmbientTemp: () => {},
   changeThermalResGround: () => {},
@@ -31,7 +31,7 @@ export const CalculatorValuesContext = createContext({
 
 export const CalculatorValuesProvider = ({ children }) => {
   const [metalType, setMetalType] = useState(MetalTypes.aluminum);
-  const [materialType, setMaterialType] = useState(MaterialTypes.PVC);
+  const [materialType, setMaterialType] = useState(MaterialTypes.XLPE);
   const [numLoadedCores, setNumLoadedCores] = useState(
     NumOfCoresTypes.onePhaseTwoCores
   );

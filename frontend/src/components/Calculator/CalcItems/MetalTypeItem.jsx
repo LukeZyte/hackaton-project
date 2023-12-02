@@ -47,7 +47,7 @@ const MetalTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{t("common:aluminum")}</Typography>
+            <Typography>{t("aluminum")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={MetalTypes.copper}>

@@ -1,4 +1,11 @@
-import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  MenuItem,
+  Select,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { LoadTypes } from "../../../utils/enums/calculator-enums";
 import { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
@@ -15,7 +22,7 @@ const LoadTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Obciążenie</Typography>
+      <Typography>{t("load")}</Typography>
       <Select
         value={calcValCtx.loadType}
         onChange={selectLoadTypeHandler}
@@ -47,6 +54,23 @@ const LoadTypeItem = () => {
           );
         })}
       </Select>
+      <Button
+        variant="contained"
+        onClick={() => {
+          console.log({
+            metalType: calcValCtx.metalType,
+            materialType: calcValCtx.materialType,
+            numLoadedCores: calcValCtx.numLoadedCores,
+            installationType: calcValCtx.installationType,
+            ambientTemp: calcValCtx.ambientTemp,
+            thermalResGround: calcValCtx.thermalResGround,
+            wiresNum: calcValCtx.wiresNum,
+            loadType: calcValCtx.loadType,
+          });
+        }}
+      >
+        Pokaz wynik wysylany do bazy danych
+      </Button>
     </Box>
   );
 };

@@ -2,10 +2,12 @@ import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import React, { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import { WiresNumTypes } from "../../../utils/enums/calculator-enums";
+import { useTranslation } from "react-i18next";
 
 const WiresNumItem = () => {
   const theme = useTheme();
   const calcValCtx = useContext(CalculatorValuesContext);
+  const { t } = useTranslation();
 
   const selectWiresNumHandler = (event) => {
     calcValCtx.changeWiresNum(event.target.value);
@@ -13,9 +15,7 @@ const WiresNumItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>
-        Ilość obwodów/przewodów znajdujących się w 1 wiązce
-      </Typography>
+      <Typography>{t("numOfWires/circuits")}</Typography>
       <Select
         value={calcValCtx.wiresNum}
         onChange={selectWiresNumHandler}
