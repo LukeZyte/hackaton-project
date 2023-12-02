@@ -1,11 +1,15 @@
-import { Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import Footer from "../components/UI/Footer";
+import CalculatorView from "../components/Calculator/CalculatorView";
 
 const Calculator = () => {
-  const { t } = useTranslation();
-
-  return <Typography>{t("test")}</Typography>;
+  return (
+    <Container>
+      <CalculatorView />
+      <Footer />
+    </Container>
+  );
 };
 
 export default Calculator;

@@ -8,11 +8,19 @@ export const lightTheme = createTheme({
       main: "rgb(0,33,95)",
     },
     secondary: {
-      main: "rgb(255,141,7)",
+      main: "rgb(255,92,7)",
+      dark: "rgb(255,141,7)",
     },
     background: {
       default: "#ffffff",
+      paper: "rgb(242,248,250)",
     },
+    text: {
+      disabled: "#9d9d9d",
+    },
+  },
+  shape: {
+    borderRadius: 0,
   },
   components: {
     MuiTypography: {
@@ -20,6 +28,14 @@ export const lightTheme = createTheme({
         color: "black",
       },
     },
+    // MuiButton: {
+    //   root: {
+
+    //     "&:hover": {
+    //       backgroundColor: theme.palette.prim
+    //     },
+    //    }
+    // }
   },
 });
 
@@ -28,14 +44,22 @@ export const darkTheme = createTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "rgb(129, 162, 223)",
+      main: "rgb(70, 102, 161)",
     },
     secondary: {
-      main: "rgb(255,141,7)",
+      main: "rgb(255,92,7)",
+      light: "rgb(255,141,7)",
     },
     background: {
-      default: "#000000",
+      default: "#222222",
+      paper: "#333333",
     },
+    text: {
+      disabled: "#9d9d9d",
+    },
+  },
+  shape: {
+    borderRadius: 0,
   },
   components: {
     MuiTypography: {

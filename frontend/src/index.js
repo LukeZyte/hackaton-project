@@ -9,10 +9,13 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import "./utils/i18n";
+import { CalculatorValuesProvider } from "./store/calculatorValues";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <CalculatorValuesProvider>
+      <App />
+    </CalculatorValuesProvider>
   </React.StrictMode>
 );
