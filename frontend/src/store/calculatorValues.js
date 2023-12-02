@@ -1,9 +1,13 @@
 import { createContext, useState } from "react";
 import {
+  AmbientTempTypes,
   InstallationTypes,
+  LoadTypes,
   MaterialTypes,
   MetalTypes,
   NumOfCoresTypes,
+  ThermalResTypes,
+  WiresNumTypes,
 } from "../utils/enums/calculator-enums";
 
 export const CalculatorValuesContext = createContext({
@@ -13,14 +17,16 @@ export const CalculatorValuesContext = createContext({
   installationType: null,
   ambientTemp: null,
   thermalResGround: null,
-  loadCurrent: null,
+  wiresNum: null,
+  loadType: null,
   changeMetalType: () => {},
   changeMaterialType: () => {},
   changeNumLoadedVeins: () => {},
   changeInstallationType: () => {},
   changeAmbientTemp: () => {},
   changeThermalResGround: () => {},
-  changeLoadCurrent: () => {},
+  changeWiresNum: () => {},
+  changeLoadType: () => {},
 });
 
 export const CalculatorValuesProvider = ({ children }) => {
@@ -32,9 +38,10 @@ export const CalculatorValuesProvider = ({ children }) => {
   const [installationType, setInstallationType] = useState(
     InstallationTypes.A1
   );
-  const [ambientTemp, setAmbientTemp] = useState(null);
-  const [thermalResGround, setThermalResGround] = useState(null);
-  const [loadCurrent, setLoadCurrent] = useState(null);
+  const [ambientTemp, setAmbientTemp] = useState(AmbientTempTypes[30]);
+  const [thermalResGround, setThermalResGround] = useState(ThermalResTypes[1]);
+  const [wiresNum, setWiresNum] = useState(WiresNumTypes[1]);
+  const [loadType, setLoadType] = useState(LoadTypes.current);
 
   const changeMetalType = (value) => {
     setMetalType(value);
@@ -54,8 +61,11 @@ export const CalculatorValuesProvider = ({ children }) => {
   const changeThermalResGround = (value) => {
     setThermalResGround(value);
   };
-  const changeLoadCurrent = (value) => {
-    setLoadCurrent(value);
+  const changeWiresNum = (value) => {
+    setWiresNum(value);
+  };
+  const changeLoadType = (value) => {
+    setLoadType(value);
   };
 
   const value = {
@@ -65,14 +75,16 @@ export const CalculatorValuesProvider = ({ children }) => {
     installationType: installationType,
     ambientTemp: ambientTemp,
     thermalResGround: thermalResGround,
-    loadCurrent: loadCurrent,
+    wiresNum: wiresNum,
+    loadType: loadType,
     changeMetalType: changeMetalType,
     changeMaterialType: changeMaterialType,
     changeNumLoadedCores: changeNumLoadedCores,
     changeInstallationType: changeInstallationType,
     changeAmbientTemp: changeAmbientTemp,
     changeThermalResGround: changeThermalResGround,
-    changeLoadCurrent: changeLoadCurrent,
+    changeWiresNum: changeWiresNum,
+    changeLoadType: changeLoadType,
   };
   return (
     <CalculatorValuesContext.Provider value={value}>

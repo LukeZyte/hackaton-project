@@ -2,10 +2,12 @@ import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import React, { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import { MetalTypes } from "../../../utils/enums/calculator-enums";
+import { useTranslation } from "react-i18next";
 
 const MetalTypeItem = () => {
   const calcValCtx = useContext(CalculatorValuesContext);
   const theme = useTheme();
+  const {t} = useTranslation();
 
   const selectMetalHandler = (event) => {
     console.log(event.target.value);
@@ -18,7 +20,7 @@ const MetalTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Rodzaj metalu</Typography>
+      <Typography>{t("typeOfMetal")}</Typography>
 
       <Select
         value={calcValCtx.metalType}
@@ -45,7 +47,7 @@ const MetalTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{MetalTypes.aluminum}</Typography>
+            <Typography>{t("common:aluminum")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={MetalTypes.copper}>
@@ -57,7 +59,7 @@ const MetalTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{MetalTypes.copper}</Typography>
+            <Typography>{t("common:copper")}</Typography>
           </Box>
         </MenuItem>
       </Select>

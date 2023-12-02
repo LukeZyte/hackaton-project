@@ -2,10 +2,12 @@ import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import React, { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import { InstallationTypes } from "../../../utils/enums/calculator-enums";
+import { useTranslation } from "react-i18next";
 
 const InstallationTypeItem = () => {
   const calcValCtx = useContext(CalculatorValuesContext);
   const theme = useTheme();
+  const {t} = useTranslation()
 
   const selectInstallationTypeHandler = (event) => {
     console.log(event.target.value);
@@ -30,7 +32,7 @@ const InstallationTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Sposób instalacji</Typography>
+      <Typography>{t("installationMethod")}</Typography>
 
       <Select
         value={calcValCtx.installationType}
@@ -57,7 +59,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.A1}</Typography>
+            <Typography>{t("4a1")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.A2}>
@@ -69,7 +71,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.A2}</Typography>
+            <Typography>{t("4a2")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.B1}>
@@ -81,7 +83,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.B1}</Typography>
+            <Typography>{t("4b1")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.B2}>
@@ -93,7 +95,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.B2}</Typography>
+            <Typography>{t("4b2")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.E}>
@@ -105,7 +107,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.E}</Typography>
+            <Typography>{t("4e")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.F}>
@@ -117,7 +119,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.F}</Typography>
+            <Typography>{t("4f")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.D1}>
@@ -129,7 +131,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.D1}</Typography>
+            <Typography>{t("4d1")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={InstallationTypes.D2}>
@@ -141,7 +143,7 @@ const InstallationTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{InstallationTypes.D2}</Typography>
+            <Typography>{t("4d2")}</Typography>
           </Box>
         </MenuItem>
       </Select>

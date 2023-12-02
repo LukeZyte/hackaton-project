@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
 import ReactCountryFlag from "react-country-flag";
 
+
 const Langs = {
   pl: "pl",
   en: "en",
@@ -105,11 +106,11 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
                   justifyContent: "space-between",
                 }}
               >
-                <Typography>Ciemny motyw strony:</Typography>
+                <Typography>{t("website_theme")}</Typography>
                 <Switch value={!isDarkTheme} onChange={changeThemeHandler} />
               </Box>
               <Box>
-                <Typography>Język strony</Typography>
+                <Typography>{t("site language")}</Typography>
                 <Select
                   value={selectedLang}
                   onChange={selectLangHandler}
@@ -143,7 +144,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
                         }}
                         title="PL"
                       />
-                      <Typography>Polski</Typography>
+                      <Typography>{t("polish")}</Typography>
                     </Box>
                   </MenuItem>
                   <MenuItem value={Langs.en}>
@@ -164,7 +165,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
                         }}
                         title="US"
                       />
-                      <Typography>Angielski</Typography>
+                      <Typography>{t("english")}</Typography>
                     </Box>
                   </MenuItem>
                 </Select>

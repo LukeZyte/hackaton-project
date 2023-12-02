@@ -1,11 +1,13 @@
 import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useTransition } from "react";
 import { MaterialTypes } from "../../../utils/enums/calculator-enums";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
+import { useTranslation } from "react-i18next";
 
 const MaterialTypeItem = () => {
   const theme = useTheme();
   const calcValCtx = useContext(CalculatorValuesContext);
+  const {t} = useTranslation()
 
   const selectMaterialHandler = (event) => {
     console.log(event.target.value);
@@ -20,7 +22,7 @@ const MaterialTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Rodzaj tworzywa izolacyjnego </Typography>
+      <Typography>{t("typeOfMaterial")}</Typography>
       <Select
         value={calcValCtx.materialType}
         onChange={selectMaterialHandler}
@@ -46,7 +48,7 @@ const MaterialTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{MaterialTypes.PVC}</Typography>
+            <Typography>{t("pvc")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={MaterialTypes.XLPE}>
@@ -58,7 +60,7 @@ const MaterialTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{MaterialTypes.XLPE}</Typography>
+            <Typography>{t("xlpe")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={MaterialTypes.BZCA}>
@@ -70,7 +72,7 @@ const MaterialTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{MaterialTypes.BZCA}</Typography>
+            <Typography>{t("b2ca")}</Typography>
           </Box>
         </MenuItem>
       </Select>

@@ -26,5 +26,7 @@
   "pvc": "PVC - polichlorek winylu",
   "xlpe": "XLPE - polietylen sieciowany",
   "b2ca": "B2ca - tworzywo bezhalogenowe klasy B2ca",
-  "installationType": "Sposób instalacji"
+  "installationType": "Sposób instalacji",
+  "currentLoad": "Prąd obciążenia",
+  "powerLoad": "Moc obciążenia"
 }

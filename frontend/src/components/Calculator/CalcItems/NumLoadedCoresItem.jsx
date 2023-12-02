@@ -43,7 +43,7 @@ const NumLoadedCoresItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>Rodzaj tworzywa izolacyjnego</Typography>
+      <Typography>{t("typeOfMaterial")}</Typography>
       <Select
         value={calcValCtx.numLoadedCores}
         onChange={selectNumLoadedCoresHandler}
@@ -70,7 +70,7 @@ const NumLoadedCoresItem = () => {
             }}
           >
             <Typography>
-              {fullValue(NumOfCoresTypes.threePhasesSingle)}
+              {t("3c")}
             </Typography>
           </Box>
         </MenuItem>
@@ -84,7 +84,7 @@ const NumLoadedCoresItem = () => {
             }}
           >
             <Typography>
-              {fullValue(NumOfCoresTypes.onePhaseTwoCores)}
+            {t("3a")}
             </Typography>
           </Box>
         </MenuItem>
@@ -98,7 +98,7 @@ const NumLoadedCoresItem = () => {
             }}
           >
             <Typography>
-              {fullValue(NumOfCoresTypes.threePhasesFour)}
+            {t("3b")}
             </Typography>
           </Box>
         </MenuItem>
@@ -112,7 +112,7 @@ const NumLoadedCoresItem = () => {
             }}
           >
             <Typography>
-              {fullValue(NumOfCoresTypes.threePhasesFive)}
+            {t("3d")}
             </Typography>
           </Box>
         </MenuItem>
