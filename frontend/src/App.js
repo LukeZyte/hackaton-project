@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useTranslation } from "react-i18next";
+import "./App.css";
+import {
+  AppBar,
+  Box,
+  Button,
+  CssBaseline,
+  IconButton,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import { lightTheme, darkTheme } from "./utils/theme";
+import Calculator from "./pages/Calculator";
+import { useEffect, useState } from "react";
+import Appbar from "./components/UI/Appbar";
 
-function App() {
+const App = () => {
+  // States
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  // Side-effects
+  useEffect(() => {
+    let isDark = localStorage.getItem("isDarkTheme");
+    isDark = isDark === "false" ? false : true;
+    setIsDarkTheme(isDark);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <CssBaseline />
+      {/* Header */}
+      <Appbar setIsDarkTheme={setIsDarkTheme} />
+
+      <Calculator />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
