@@ -175,9 +175,13 @@ const FinalItem = () => {
 
             setIsLoading(true);
             fetch(
-              `http://localhost:3001/logic?metal=${body.metal}&izolacja=${body.izolacja}&zyly_obc=${body.zyly_obj["zyly_obc"]}&zyly=${body.zyly_obj["zyly"]}&faza=${body.zyly_obj["faza"]}&sposob_instalacji=${body.sposob_instalacji}&temperatura=${body.temperatura}&rezystancja_cieplna=${body.rezystancja_cieplna}&ilosc_przewodow=${body.ilosc_przewodow}&moc=${body.moc}&prad=${body.prad}&cosphi=${body.cosphi}`,
+              `https://cablestooltip.lm.r.appspot.com/logic?metal=${body.metal}&izolacja=${body.izolacja}&zyly_obc=${body.zyly_obj["zyly_obc"]}&zyly=${body.zyly_obj["zyly"]}&faza=${body.zyly_obj["faza"]}&sposob_instalacji=${body.sposob_instalacji}&temperatura=${body.temperatura}&rezystancja_cieplna=${body.rezystancja_cieplna}&ilosc_przewodow=${body.ilosc_przewodow}&moc=${body.moc}&prad=${body.prad}&cosphi=${body.cosphi}`,
               {
                 method: "GET",
+                mode: "no-cors",
+                headers: {
+                  "Access-Control-Allow-Origin": "*",
+                },
               }
             )
               .then((res) => res.json())

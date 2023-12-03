@@ -1,0 +1,2 @@
+'gcr.io/cloud-builders/npm'
+['install']
