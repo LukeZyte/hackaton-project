@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Button,
   Toolbar,
   Typography,
   Box,
@@ -17,7 +16,6 @@ import { useTranslation } from "react-i18next";
 import MenuIcon from "@mui/icons-material/Menu";
 import ReactCountryFlag from "react-country-flag";
 
-
 const Langs = {
   pl: "pl",
   en: "en",
@@ -29,7 +27,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedLang, setSelectedLang] = useState();
 
-  const changeLangHandler = () => {
+  useEffect(() => {
     if (i18n.language === "pl-PL") {
       i18n.changeLanguage("pl");
     }
@@ -42,7 +40,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
     } else if (i18n.language === "en") {
       i18n.changeLanguage("pl");
     }
-  };
+  }, []);
 
   const changeThemeHandler = () => {
     setIsDarkTheme((prev) => {
@@ -107,7 +105,11 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
                 }}
               >
                 <Typography>{t("website_theme")}</Typography>
-                <Switch value={!isDarkTheme} onChange={changeThemeHandler} />
+                <Switch
+                  value={isDarkTheme}
+                  checked={isDarkTheme}
+                  onChange={changeThemeHandler}
+                />
               </Box>
               <Box>
                 <Typography>{t("site language")}</Typography>

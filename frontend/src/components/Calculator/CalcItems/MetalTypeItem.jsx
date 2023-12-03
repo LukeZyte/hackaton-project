@@ -20,7 +20,7 @@ const MetalTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>{t("typeOfMetal")}</Typography>
+      <Typography fontWeight="bold">{t("typeOfMetal")}</Typography>
 
       <Select
         value={calcValCtx.metalType}

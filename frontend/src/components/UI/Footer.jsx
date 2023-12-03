@@ -1,9 +1,11 @@
 import React from "react";
-import { Typography, Box, useTheme } from "@mui/material";
+import { Typography, Box, useTheme, useMediaQuery } from "@mui/material";
 
 const footerFontSize = 14;
 const Footer = () => {
   const theme = useTheme();
+  const isDesktop = useMediaQuery("(min-width:500px)");
+
   return (
     <Box
       sx={{
@@ -13,6 +15,7 @@ const Footer = () => {
         paddingBottom: 8,
         justifyContent: "space-between",
         alignItems: "center",
+        flexDirection: isDesktop ? "row" : "column",
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
@@ -70,7 +73,7 @@ const Footer = () => {
           marginRight: 2,
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-end",
+          alignItems: isDesktop ? "flex-end" : "center",
         }}
       >
         <Typography

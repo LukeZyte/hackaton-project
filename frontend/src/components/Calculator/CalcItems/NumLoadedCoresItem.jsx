@@ -67,7 +67,7 @@ const NumLoadedCoresItem = () => {
           )}`}</Typography>
         </Box>
       </Box>
-      <Typography>{t("typeOfMaterial")}</Typography>
+      <Typography fontWeight="bold">{t("typeOfMaterial")}</Typography>
       <Select
         value={calcValCtx.numLoadedCores}
         onChange={selectNumLoadedCoresHandler}

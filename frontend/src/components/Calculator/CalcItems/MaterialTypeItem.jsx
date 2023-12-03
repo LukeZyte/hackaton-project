@@ -38,7 +38,7 @@ const MaterialTypeItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography fontWeight="bold">Wprowdzone parametry:</Typography>
         <Box
           sx={{
             display: "flex",
@@ -71,7 +71,7 @@ const MaterialTypeItem = () => {
             },
           }}
         >
-          <MenuItem value={MaterialTypes.XLPE}>
+          <MenuItem value={MaterialTypes.XLPE} style={{ whiteSpace: "normal" }}>
             <Box
               sx={{
                 display: "flex",
@@ -102,7 +102,7 @@ const MaterialTypeItem = () => {
             },
           }}
         >
-          <MenuItem value={MaterialTypes.XLPE}>
+          <MenuItem value={MaterialTypes.XLPE} style={{ whiteSpace: "normal" }}>
             <Box
               sx={{
                 display: "flex",
@@ -114,7 +114,7 @@ const MaterialTypeItem = () => {
               <Typography>{t("xlpe")}</Typography>
             </Box>
           </MenuItem>
-          <MenuItem value={MaterialTypes.PVC}>
+          <MenuItem value={MaterialTypes.PVC} style={{ whiteSpace: "normal" }}>
             <Box
               sx={{
                 display: "flex",
@@ -126,7 +126,7 @@ const MaterialTypeItem = () => {
               <Typography>{t("pvc")}</Typography>
             </Box>
           </MenuItem>
-          <MenuItem value={MaterialTypes.BZCA}>
+          <MenuItem value={MaterialTypes.BZCA} style={{ whiteSpace: "normal" }}>
             <Box
               sx={{
                 display: "flex",

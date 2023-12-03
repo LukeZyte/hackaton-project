@@ -87,5 +87,12 @@ export const darkTheme = createTheme({
         },
       },
     },
+    // MuiTextField: {
+    //   defaultProps: {
+    //     InputProps: {
+    //       color: "white",
+    //     },
+    //   },
+    // },
   },
 });

@@ -18,6 +18,7 @@ import WiresNumItem from "./CalcItems/WiresNumItem";
 import LoadTypeItem from "./CalcItems/LoadTypeItem";
 import CurrentLoadItem from "./CalcItems/CurrentLoadItem";
 import PowerLoadItem from "./CalcItems/PowerLoadItem";
+import FinalItem from "./CalcItems/FinalItem";
 
 const CalculatorView = () => {
   const theme = useTheme();
@@ -86,27 +87,7 @@ const CalculatorView = () => {
         {calcStage === 8 && calcValCtx.loadType === LoadTypes.power && (
           <PowerLoadItem />
         )}
-        {calcStage === 9 && (
-          <Button
-            variant="contained"
-            onClick={() => {
-              console.log({
-                metal: calcValCtx.metalType,
-                izolacja: calcValCtx.materialType,
-                zyly_obj: calcValCtx.numLoadedCores,
-                sposob_instalacji: calcValCtx.installationType,
-                temperatura: calcValCtx.ambientTemp,
-                rezystancja_cieplna: calcValCtx.thermalResGround,
-                ilosc_przewodow: calcValCtx.wiresNum,
-                moc: calcValCtx.power,
-                prad: calcValCtx.current,
-                cosphi: calcValCtx.cosphi,
-              });
-            }}
-          >
-            Pokaz wynik wysylany do bazy danych
-          </Button>
-        )}
+        {calcStage === 9 && <FinalItem />}
 
         <Box
           sx={{

@@ -70,14 +70,14 @@ const InstallationTypeItem = () => {
           )}`}</Typography>
         </Box>
       </Box>
-      <Typography>{t("installationMethod")}</Typography>
+      <Typography fontWeight="bold">{t("installationMethod")}</Typography>
 
       <Select
         value={calcValCtx.installationType}
         onChange={selectInstallationTypeHandler}
-        rows={1}
         placeholder="Wybierz rodzaj metalu"
         sx={{
+          flexWrap: "wrap",
           width: "100%",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: theme.palette.text.secondary,
@@ -88,7 +88,7 @@ const InstallationTypeItem = () => {
         }}
         defaultValue={InstallationTypes.A1}
       >
-        <MenuItem value={InstallationTypes.A1}>
+        <MenuItem value={InstallationTypes.A1} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -100,7 +100,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4a1")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.A2}>
+        <MenuItem value={InstallationTypes.A2} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -112,7 +112,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4a2")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.B1}>
+        <MenuItem value={InstallationTypes.B1} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -124,7 +124,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4b1")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.B2}>
+        <MenuItem value={InstallationTypes.B2} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -136,7 +136,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4b2")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.E}>
+        <MenuItem value={InstallationTypes.E} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -148,7 +148,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4e")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.F}>
+        <MenuItem value={InstallationTypes.F} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -160,7 +160,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4f")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.D1}>
+        <MenuItem value={InstallationTypes.D1} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
@@ -172,7 +172,7 @@ const InstallationTypeItem = () => {
             <Typography>{t("4d1")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={InstallationTypes.D2}>
+        <MenuItem value={InstallationTypes.D2} style={{ whiteSpace: "normal" }}>
           <Box
             sx={{
               display: "flex",
