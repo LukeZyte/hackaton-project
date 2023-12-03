@@ -80,7 +80,7 @@ const Footer = () => {
           fontSize={footerFontSize}
           sx={{ color: theme.palette.text.disabled }}
         >
-          2023
+          CablesTooltip
         </Typography>
         <Typography
           fontSize={footerFontSize}
