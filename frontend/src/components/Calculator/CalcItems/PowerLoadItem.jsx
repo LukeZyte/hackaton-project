@@ -25,7 +25,7 @@ const PowerLoadItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",
@@ -68,7 +68,7 @@ const PowerLoadItem = () => {
           )}`}</Typography>
         </Box>
       </Box>
-      <Typography fontWeight="bold">Wartość mocy obciążenia [W]</Typography>
+      <Typography fontWeight="bold">{t("lpv")} [W]</Typography>
       <TextField
         inputProps={{
           style: { color: theme.mode === "dark" ? "white" : "black" },
@@ -78,7 +78,7 @@ const PowerLoadItem = () => {
         type="number"
         onChange={(e) => calcValCtx.changePower(e.target.value)}
       />
-      <Typography fontWeight="bold">Wartość cos(phi)</Typography>
+      <Typography fontWeight="bold">{t("valueOfCosPhi")}(phi)</Typography>
       <TextField
         inputProps={{
           style: { color: theme.mode === "dark" ? "white" : "black" },

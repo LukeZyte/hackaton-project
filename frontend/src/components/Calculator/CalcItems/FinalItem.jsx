@@ -30,7 +30,7 @@ const FinalItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",
@@ -72,13 +72,13 @@ const FinalItem = () => {
             calcValCtx.wiresNum
           )}`}</Typography>
           {calcValCtx.current && (
-            <Typography variant="caption">{`Prąd: ${t(
+            <Typography variant="caption">{`${t("current")}: ${t(
               calcValCtx.current
             )} [A]`}</Typography>
           )}
           {calcValCtx.power && (
             <>
-              <Typography variant="caption">{`Moc: ${t(
+              <Typography variant="caption">{`${t("power")}: ${t(
                 calcValCtx.power
               )} [W]`}</Typography>
               <Typography variant="caption">{`Cos(phi): ${t(
@@ -91,7 +91,7 @@ const FinalItem = () => {
       {fetchedData && (
         <>
           {fetchedData.length === 1 && (
-            <Typography>{fetchedData[0]}</Typography>
+            <Typography>{t("errorText")}</Typography>
           )}
           {fetchedData.length > 1 && (
             <Box sx={{ marginBottom: 4 }}>
@@ -100,10 +100,12 @@ const FinalItem = () => {
                 fontWeight="bold"
                 sx={{ marginBottom: 1 }}
               >
-                {fetchedData.length > 1 ? "Wyniki" : "Wynik"}
+                {fetchedData.length > 1 ? t("results") : t("result")}
               </Typography>
               {fetchedData[0] && (
-                <Typography>{`Typ kabla: ${fetchedData[0]}`}</Typography>
+                <Typography>{`${t("cableType")}: ${
+                  fetchedData[0]
+                }`}</Typography>
               )}
               {fetchedData[3] && (
                 <>
@@ -113,13 +115,15 @@ const FinalItem = () => {
                     rel="noreferrer"
                     style={{ color: theme.palette.secondary.main }}
                   >
-                    [Link] Nota katalogowa
+                    [Link] {t("catalogNote")}
                   </a>
                   <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
                 </>
               )}
               {fetchedData[1] && (
-                <Typography>{`Typ kabla: ${fetchedData[1]}`}</Typography>
+                <Typography>{`${t("cableType")}: ${
+                  fetchedData[1]
+                }`}</Typography>
               )}
               {fetchedData[4] && (
                 <>
@@ -129,13 +133,15 @@ const FinalItem = () => {
                     rel="noreferrer"
                     style={{ color: theme.palette.secondary.main }}
                   >
-                    [Link] Nota katalogowa
+                    [Link] {t("catalogNote")}
                   </a>
                   <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
                 </>
               )}
               {fetchedData[2] && (
-                <Typography>{`Typ kabla: ${fetchedData[2]}`}</Typography>
+                <Typography>{`${t("cableType")}: ${
+                  fetchedData[2]
+                }`}</Typography>
               )}
               {fetchedData[5] && (
                 <>
@@ -145,7 +151,7 @@ const FinalItem = () => {
                     rel="noreferrer"
                     style={{ color: theme.palette.secondary.main }}
                   >
-                    [Link] Nota katalogowa
+                    [Link] {t("catalogNote")}
                   </a>
                   <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
                 </>
@@ -175,13 +181,9 @@ const FinalItem = () => {
 
             setIsLoading(true);
             fetch(
-              `https://cablestooltip.lm.r.appspot.com/logic?metal=${body.metal}&izolacja=${body.izolacja}&zyly_obc=${body.zyly_obj["zyly_obc"]}&zyly=${body.zyly_obj["zyly"]}&faza=${body.zyly_obj["faza"]}&sposob_instalacji=${body.sposob_instalacji}&temperatura=${body.temperatura}&rezystancja_cieplna=${body.rezystancja_cieplna}&ilosc_przewodow=${body.ilosc_przewodow}&moc=${body.moc}&prad=${body.prad}&cosphi=${body.cosphi}`,
+              `http://localhost:3001/logic?metal=${body.metal}&izolacja=${body.izolacja}&zyly_obc=${body.zyly_obj["zyly_obc"]}&zyly=${body.zyly_obj["zyly"]}&faza=${body.zyly_obj["faza"]}&sposob_instalacji=${body.sposob_instalacji}&temperatura=${body.temperatura}&rezystancja_cieplna=${body.rezystancja_cieplna}&ilosc_przewodow=${body.ilosc_przewodow}&moc=${body.moc}&prad=${body.prad}&cosphi=${body.cosphi}`,
               {
                 method: "GET",
-                mode: "no-cors",
-                headers: {
-                  "Access-Control-Allow-Origin": "*",
-                },
               }
             )
               .then((res) => res.json())
@@ -201,8 +203,8 @@ const FinalItem = () => {
                 );
               })
               .catch((err) => {
-                setFetchedData("Nie udało się załadować wyniku :(");
-                console.log(err);
+                setFetchedData("n");
+                console.log("Error: " + err);
               })
               .finally(() => {
                 setIsLoading(false);
@@ -213,7 +215,7 @@ const FinalItem = () => {
           {isLoading ? (
             <CircularProgress sx={{ color: "white" }} />
           ) : (
-            "Zatwiedź"
+            t("confirm")
           )}
         </Button>
       </Box>

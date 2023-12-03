@@ -69,7 +69,6 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
   // Side-effects
   useEffect(() => {
     setSelectedLang(i18n.language);
-    console.log(i18n.language);
   }, []);
 
   return (

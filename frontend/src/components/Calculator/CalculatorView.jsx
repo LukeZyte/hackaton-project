@@ -98,7 +98,7 @@ const CalculatorView = () => {
           }}
         >
           <Typography variant="h5" fontWeight="700" color={"white"}>
-            Kalkulator
+            {t("calc")}
           </Typography>
           {!!resArray && (
             <Button
@@ -106,7 +106,7 @@ const CalculatorView = () => {
               sx={{ color: "white" }}
               onClick={lastResultHandler}
             >
-              Ostatni wynik
+              {t("lastResult")}
             </Button>
           )}
         </Box>
@@ -149,7 +149,7 @@ const CalculatorView = () => {
             startIcon={<FirstPageIcon />}
             onClick={handleRestart}
           >
-            Od nowa
+            {t("startOver")}
           </Button>
           <Box
             sx={{

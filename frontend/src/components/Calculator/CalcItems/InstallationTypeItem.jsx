@@ -13,7 +13,6 @@ const InstallationTypeItem = () => {
   const { t } = useTranslation();
 
   const selectInstallationTypeHandler = (event) => {
-    console.log(event.target.value);
     if (event.target.value === InstallationTypes.A1) {
       calcValCtx.changeInstallationType(InstallationTypes.A1);
     } else if (event.target.value === InstallationTypes.A2) {
@@ -42,7 +41,7 @@ const InstallationTypeItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",

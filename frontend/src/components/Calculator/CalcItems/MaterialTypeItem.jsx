@@ -13,7 +13,6 @@ const MaterialTypeItem = () => {
   const { t } = useTranslation();
 
   const selectMaterialHandler = (event) => {
-    console.log(event.target.value);
     if (event.target.value === MaterialTypes.BZCA) {
       calcValCtx.changeMaterialType(MaterialTypes.BZCA);
     } else if (event.target.value === MaterialTypes.PVC) {
@@ -38,7 +37,7 @@ const MaterialTypeItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography fontWeight="bold">Wprowdzone parametry:</Typography>
+        <Typography fontWeight="bold">{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",

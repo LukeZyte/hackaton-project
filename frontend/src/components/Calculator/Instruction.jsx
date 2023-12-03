@@ -16,7 +16,7 @@ const Instruction = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Container maxWidth="md" sx={{ display: "flex", justifyContent: "center" }}>
+    <Container maxWidth="md">
       <Box sx={{ marginBottom: 1, marginTop: 3 }}>
         <Accordion>
           <AccordionSummary
@@ -48,9 +48,7 @@ const Instruction = () => {
                   height={36}
                 />
                 <Box sx={{ marginTop: 0.5 }}>
-                  <Typography>
-                    {"(1-fazowa: przewody i kable 1-, 3- lub 4- żyłowe)"}
-                  </Typography>
+                  <Typography>{t("formulaDesc2")}</Typography>
                 </Box>
               </Box>
               <Box sx={{ display: "flex", marginTop: 1, gap: 1 }}>
@@ -63,9 +61,7 @@ const Instruction = () => {
                   height={36}
                 />
                 <Box sx={{ marginTop: 0.5 }}>
-                  <Typography>
-                    {"(3-fazowa: przewody i kable 1- lub 4-/5- żyłowe)"}
-                  </Typography>
+                  <Typography>{t("formulaDesc1")}</Typography>
                 </Box>
               </Box>
               <Box sx={{ marginTop: 1.5 }}>
@@ -173,7 +169,7 @@ const Instruction = () => {
                     <Box>
                       <Typography>{t("groundTemp")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -183,13 +179,13 @@ const Instruction = () => {
                       >
                         {"20°C"}
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box sx={{ display: "flex" }}>
                     <Box>
                       <Typography>{t("groundRes")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -199,13 +195,13 @@ const Instruction = () => {
                       >
                         {"1,0K∙m/W"}
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box sx={{ display: "flex" }}>
                     <Box>
                       <Typography>{t("lfc")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -215,13 +211,13 @@ const Instruction = () => {
                       >
                         0,7
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box sx={{ display: "flex" }}>
                     <Box>
                       <Typography>{t("depth")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -231,13 +227,13 @@ const Instruction = () => {
                       >
                         0,7m
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box sx={{ display: "flex" }}>
                     <Box>
                       <Typography>{t("spacing")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -247,13 +243,13 @@ const Instruction = () => {
                       >
                         70mm
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                   <Box sx={{ display: "flex" }}>
                     <Box>
                       <Typography>{t("moisture")}</Typography>
                     </Box>
-                    <Box>
+                    {/* <Box>
                       <Typography
                         sx={
                           i18n.language === "pl"
@@ -263,7 +259,7 @@ const Instruction = () => {
                       >
                         {t("no")}
                       </Typography>
-                    </Box>
+                    </Box> */}
                   </Box>
                 </Box>
               </Box>

@@ -14,7 +14,6 @@ const ThermalResItem = () => {
 
   const selectThermalResHandler = (event) => {
     calcValCtx.changeThermalResGround(event.target.value);
-    console.log(calcValCtx.thermalResGround);
   };
 
   return (
@@ -26,7 +25,7 @@ const ThermalResItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",

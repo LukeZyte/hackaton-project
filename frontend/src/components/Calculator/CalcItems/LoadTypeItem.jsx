@@ -32,7 +32,7 @@ const LoadTypeItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",

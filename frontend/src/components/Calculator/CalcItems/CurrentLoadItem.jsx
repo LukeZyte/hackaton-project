@@ -25,7 +25,7 @@ const CurrentLoadItem = () => {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <Typography>Wprowdzone parametry:</Typography>
+        <Typography>{t("givenParams")}</Typography>
         <Box
           sx={{
             display: "flex",
@@ -68,7 +68,7 @@ const CurrentLoadItem = () => {
           )}`}</Typography>
         </Box>
       </Box>
-      <Typography fontWeight="bold">Wartość prądu obciążenia [A]</Typography>
+      <Typography fontWeight="bold">{t("lcv")} [A]</Typography>
       <TextField
         value={calcValCtx.current}
         inputProps={{
