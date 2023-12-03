@@ -1,5 +1,12 @@
-import { Box, Button, Container, Typography, useTheme } from "@mui/material";
-import React, { useContext, useState } from "react";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import React, { useContext, useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import MetalTypeItem from "./CalcItems/MetalTypeItem";
@@ -19,12 +26,15 @@ import LoadTypeItem from "./CalcItems/LoadTypeItem";
 import CurrentLoadItem from "./CalcItems/CurrentLoadItem";
 import PowerLoadItem from "./CalcItems/PowerLoadItem";
 import FinalItem from "./CalcItems/FinalItem";
+import FirstPageIcon from "@mui/icons-material/FirstPage";
 
 const CalculatorView = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const [calcStage, setCalcStage] = useState(0);
   const calcValCtx = useContext(CalculatorValuesContext);
+  const [resArray, setResArray] = useState(null);
+  const isDesktop = useMediaQuery("(min-width:500px)");
 
   const handleClick = () => {
     if (
@@ -50,6 +60,21 @@ const CalculatorView = () => {
     }
   };
 
+  const handleRestart = () => {
+    setCalcStage(0);
+  };
+
+  const lastResultHandler = () => {
+    if (resArray !== null) {
+      calcValCtx.setAll(resArray);
+      setCalcStage(9);
+    }
+  };
+
+  useEffect(() => {
+    setResArray(JSON.parse(localStorage.getItem("lastCalc")));
+  }, []);
+
   const nextStage = () => setCalcStage((prev) => prev + 1);
   const prevStage = () => setCalcStage((prev) => prev - 1);
 
@@ -67,11 +92,23 @@ const CalculatorView = () => {
             paddingLeft: 4,
             paddingRight: 4,
             backgroundColor: theme.palette.primary.main,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
           <Typography variant="h5" fontWeight="700" color={"white"}>
             Kalkulator
           </Typography>
+          {!!resArray && (
+            <Button
+              variant="text"
+              sx={{ color: "white" }}
+              onClick={lastResultHandler}
+            >
+              Ostatni wynik
+            </Button>
+          )}
         </Box>
         {calcStage === 0 && <MetalTypeItem />}
         {calcStage === 1 && <MaterialTypeItem />}
@@ -92,35 +129,55 @@ const CalculatorView = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "flex-end",
+            flexDirection: isDesktop ? "row" : "column",
+            justifyContent: "space-between",
             paddingLeft: 4,
             paddingRight: 4,
             paddingBottom: 4,
             gap: 2,
           }}
         >
-          {/* {calcStage > 0 && ( */}
           <Button
             disabled={calcStage === 0}
-            variant="text"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            variant="outlined"
             color="secondary"
-            startIcon={<ChevronLeftIcon />}
-            onClick={handleBack}
+            startIcon={<FirstPageIcon />}
+            onClick={handleRestart}
           >
-            {t("common:back")}
+            Od nowa
           </Button>
-          {/* )} */}
-          {/* {calcStage < 9 && ( */}
-          <Button
-            disabled={calcStage === 9}
-            variant="contained"
-            color="secondary"
-            endIcon={<ChevronRightIcon />}
-            onClick={handleClick}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              gap: 2,
+            }}
           >
-            {t("common:next")}
-          </Button>
-          {/* )} */}
+            <Button
+              disabled={calcStage === 0}
+              variant="text"
+              color="secondary"
+              startIcon={<ChevronLeftIcon />}
+              onClick={handleBack}
+            >
+              {t("common:back")}
+            </Button>
+            <Button
+              disabled={calcStage === 9}
+              variant="contained"
+              color="secondary"
+              endIcon={<ChevronRightIcon />}
+              onClick={handleClick}
+            >
+              {t("common:next")}
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Container>

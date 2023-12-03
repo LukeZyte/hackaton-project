@@ -33,6 +33,8 @@ export const CalculatorValuesContext = createContext({
   changeCurrent: () => {},
   changePower: () => {},
   changeCosphi: () => {},
+  getAll: () => {},
+  setAll: () => {},
 });
 
 export const CalculatorValuesProvider = ({ children }) => {
@@ -85,6 +87,34 @@ export const CalculatorValuesProvider = ({ children }) => {
   const changeCosphi = (value) => {
     setCosphi(value);
   };
+  const getAll = () => {
+    return [
+      metalType,
+      materialType,
+      numLoadedCores,
+      installationType,
+      ambientTemp,
+      thermalResGround,
+      wiresNum,
+      loadType,
+      current,
+      power,
+      cosphi,
+    ];
+  };
+  const setAll = (table) => {
+    setMetalType(table[0]);
+    setMaterialType(table[1]);
+    setNumLoadedCores(table[2]);
+    setInstallationType(table[3]);
+    setAmbientTemp(table[4]);
+    setThermalResGround(table[5]);
+    setWiresNum(table[6]);
+    setLoadType(table[7]);
+    setCurrent(table[8]);
+    setPower(table[9]);
+    setCosphi(table[10]);
+  };
 
   const value = {
     metalType: metalType,
@@ -109,6 +139,8 @@ export const CalculatorValuesProvider = ({ children }) => {
     changeCurrent: changeCurrent,
     changePower: changePower,
     changeCosphi: changeCosphi,
+    getAll: getAll,
+    setAll: setAll,
   };
   return (
     <CalculatorValuesContext.Provider value={value}>

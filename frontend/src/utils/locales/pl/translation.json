@@ -30,5 +30,19 @@
   "load": "Obciążenie",
   "aluminum": "Aluminium",
   "copper": "Miedź",
-  "numOfWires/circuits": "Ilość obwodów/przewodów znajdujących się w 1 wiązce"
+  "numOfWires/circuits": "Ilość obwodów/przewodów znajdujących się w 1 wiązce",
+  "formula": "Informacje dodatkowe",
+  "formulasUsedTo": "Wzory, za pomocą których został obliczony prąd obciążenia jeśli dana jest moc odbiornika, a nie jego prąd obciążenia:",
+  "formulasForFinalCurrent": "Wzór za pomocą którego jest obliczany prąd ostateczny:",
+  "permissibleTemp": "Temperatura dopuszczalna długotrwała żyły:",
+  "forPVC": "- dla kabli o izolacji z polwinitu (PVC)",
+  "permissibleCon": "Temperatura żyły dopuszczalna przy zwarciach:",
+  "groundTemp": "Temperatura obliczeniowa ziemi",
+  "groundRes": "Rezystywność cieplna gruntu",
+  "lfc": "Współczynnik obciążenia kabli w ziemii",
+  "depth": "Głębokość ułożenia w ziemi",
+  "spacing": "Odstęp między kablami ułożonymi płasko",
+  "moisture": "Uwzględnienie migracji wilgoci",
+  "no": "nie"
+
 }

@@ -1,4 +1,6 @@
 {
   "next": "Next",
-  "back": "Back"
+  "back": "Back",
+  "forPVC": "- for cables with PVC insulation",
+  "forXLPE": "- for cables with polyethylene insulation (XLPE)"
 }

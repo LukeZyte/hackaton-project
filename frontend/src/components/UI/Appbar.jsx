@@ -75,106 +75,111 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
   return (
     <AppBar
       position="static"
-      sx={{ zIndex: theme.zIndex.drawer + 1, position: "relative" }}
+      sx={{
+        zIndex: theme.zIndex.drawer + 1,
+        position: "relative",
+        paddingTop: 1,
+        paddingBottom: 1,
+      }}
     >
-      <Toolbar variant="regular">
-        <Container
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-          }}
+      {/* <Toolbar variant="regular"> */}
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <img src="NKT_logo_biale.png" height="32px" />
+        <IconButton onClick={() => setIsMenuOpen((prev) => !prev)}>
+          <MenuIcon sx={{ color: theme.palette.background.default }} />
+        </IconButton>
+        <Drawer
+          anchor={"top"}
+          open={isMenuOpen}
+          onClose={() => setIsMenuOpen((prev) => !prev)}
         >
-          <img src="NKT_logo_biale.png" height="32px" />
-          <IconButton onClick={() => setIsMenuOpen((prev) => !prev)}>
-            <MenuIcon sx={{ color: theme.palette.background.default }} />
-          </IconButton>
-          <Drawer
-            anchor={"top"}
-            open={isMenuOpen}
-            onClose={() => setIsMenuOpen((prev) => !prev)}
-          >
-            <Container maxWidth="sm" sx={{ paddingTop: 10, paddingBottom: 4 }}>
-              <Box
+          <Container maxWidth="sm" sx={{ paddingTop: 10, paddingBottom: 4 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography>{t("website_theme")}</Typography>
+              <Switch
+                value={isDarkTheme}
+                checked={isDarkTheme}
+                onChange={changeThemeHandler}
+              />
+            </Box>
+            <Box>
+              <Typography>{t("site language")}</Typography>
+              <Select
+                value={selectedLang}
+                onChange={selectLangHandler}
+                rows={1}
                 sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-between",
+                  width: "100%",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: theme.palette.text.secondary,
+                  },
+                  "& .MuiSvgIcon-root": {
+                    color: theme.palette.primary.main,
+                  },
                 }}
+                defaultValue={Langs.pl}
               >
-                <Typography>{t("website_theme")}</Typography>
-                <Switch
-                  value={isDarkTheme}
-                  checked={isDarkTheme}
-                  onChange={changeThemeHandler}
-                />
-              </Box>
-              <Box>
-                <Typography>{t("site language")}</Typography>
-                <Select
-                  value={selectedLang}
-                  onChange={selectLangHandler}
-                  rows={1}
-                  sx={{
-                    width: "100%",
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: theme.palette.text.secondary,
-                    },
-                    "& .MuiSvgIcon-root": {
-                      color: theme.palette.primary.main,
-                    },
-                  }}
-                  defaultValue={Langs.pl}
-                >
-                  <MenuItem value={Langs.pl}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: 1,
+                <MenuItem value={Langs.pl}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <ReactCountryFlag
+                      countryCode="PL"
+                      svg
+                      style={{
+                        width: "2em",
+                        height: "2em",
                       }}
-                    >
-                      <ReactCountryFlag
-                        countryCode="PL"
-                        svg
-                        style={{
-                          width: "2em",
-                          height: "2em",
-                        }}
-                        title="PL"
-                      />
-                      <Typography>{t("polish")}</Typography>
-                    </Box>
-                  </MenuItem>
-                  <MenuItem value={Langs.en}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        gap: 1,
+                      title="PL"
+                    />
+                    <Typography>{t("polish")}</Typography>
+                  </Box>
+                </MenuItem>
+                <MenuItem value={Langs.en}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <ReactCountryFlag
+                      countryCode="US"
+                      svg
+                      style={{
+                        width: "2em",
+                        height: "2em",
                       }}
-                    >
-                      <ReactCountryFlag
-                        countryCode="US"
-                        svg
-                        style={{
-                          width: "2em",
-                          height: "2em",
-                        }}
-                        title="US"
-                      />
-                      <Typography>{t("english")}</Typography>
-                    </Box>
-                  </MenuItem>
-                </Select>
-              </Box>
-            </Container>
-          </Drawer>
-          {/* <Box sx={{ display: "flex", gap: 2 }}>
+                      title="US"
+                    />
+                    <Typography>{t("english")}</Typography>
+                  </Box>
+                </MenuItem>
+              </Select>
+            </Box>
+          </Container>
+        </Drawer>
+        {/* <Box sx={{ display: "flex", gap: 2 }}>
             <Button variant="contained" onClick={changeThemeHandler}>
               THEME
             </Button>
@@ -182,8 +187,8 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
               LANG
             </Button>
           </Box> */}
-        </Container>
-      </Toolbar>
+      </Container>
+      {/* </Toolbar> */}
     </AppBar>
   );
 };

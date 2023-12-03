@@ -1,4 +1,6 @@
 {
   "next": "Dalej",
-  "back": "Wstecz"
+  "back": "Wstecz",
+  "forPVC": "- dla kabli o izolacji z polwinitu (PVC)",
+  "forXLPE": "- dla kabli o izolacji z polietylenu (XLPE)"
 }

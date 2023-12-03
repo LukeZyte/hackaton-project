@@ -30,5 +30,19 @@
   "load": "Load",
   "aluminum": "Aluminum",
   "copper": "Copper",
-  "numOfWires/circuits": "Number of circuits/wires in 1 bundle"
+  "numOfWires/circuits": "Number of circuits/wires in 1 bundle",
+  "formula": "Additional information",
+  "formulasUsedTo": "Formulas used to calculate the load current if the receiver power is given, not its load current:",
+  "formulasForFinalCurrent": "The formula by which the final current is calculated:",
+  "permissibleTemp": "Permissible long-term core temperature:",
+  "forPVC": "- for cables with PVC insulation",
+  "permissibleCon": "Permissible conductor temperature during short circuits:",
+  "groundTemp": "Calculated ground temperature",
+  "groundRes": "Thermal resistivity of the soil",
+  "lfc": "Load factor of cables in the ground",
+  "depth": "Depth of installation in the ground",
+  "spacing": "Spacing between cables laid flat",
+  "moisture": "Accounting for moisture migration",
+  "no": "no"
+
 }

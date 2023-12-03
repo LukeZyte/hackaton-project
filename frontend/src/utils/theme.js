@@ -19,6 +19,11 @@ export const lightTheme = createTheme({
       disabled: "#9d9d9d",
     },
   },
+  typography: {
+    caption: {
+      fontSize: 16,
+    },
+  },
   shape: {
     borderRadius: 0,
   },
@@ -64,6 +69,11 @@ export const darkTheme = createTheme({
       disabled: "#9d9d9d",
     },
   },
+  typography: {
+    caption: {
+      fontSize: 16,
+    },
+  },
   shape: {
     borderRadius: 0,
   },
@@ -87,6 +97,7 @@ export const darkTheme = createTheme({
         },
       },
     },
+
     // MuiTextField: {
     //   defaultProps: {
     //     InputProps: {
