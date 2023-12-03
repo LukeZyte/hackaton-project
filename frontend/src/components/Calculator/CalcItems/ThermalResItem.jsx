@@ -1,9 +1,7 @@
 import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import {
-  AmbientTempTypes,
-  InstallationTypes,
   NumOfCoresTypes,
   ThermalResTypes,
 } from "../../../utils/enums/calculator-enums";

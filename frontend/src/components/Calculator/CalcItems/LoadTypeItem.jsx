@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  MenuItem,
-  Select,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import {
   InstallationTypes,
   LoadTypes,

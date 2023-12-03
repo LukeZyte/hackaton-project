@@ -1,11 +1,4 @@
-import {
-  Box,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import React, { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import { useTranslation } from "react-i18next";
@@ -84,7 +77,10 @@ const NumLoadedCoresItem = () => {
         }}
         defaultValue={NumOfCoresTypes.onePhaseTwoCores}
       >
-        <MenuItem value={NumOfCoresTypes.threePhasesSingle}>
+        <MenuItem
+          value={NumOfCoresTypes.threePhasesSingle}
+          style={{ whiteSpace: "normal" }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -96,7 +92,10 @@ const NumLoadedCoresItem = () => {
             <Typography>{t("3c")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={NumOfCoresTypes.onePhaseTwoCores}>
+        <MenuItem
+          value={NumOfCoresTypes.onePhaseTwoCores}
+          style={{ whiteSpace: "normal" }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -108,7 +107,10 @@ const NumLoadedCoresItem = () => {
             <Typography>{t("3a")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={NumOfCoresTypes.threePhasesFour}>
+        <MenuItem
+          value={NumOfCoresTypes.threePhasesFour}
+          style={{ whiteSpace: "normal" }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -120,7 +122,10 @@ const NumLoadedCoresItem = () => {
             <Typography>{t("3b")}</Typography>
           </Box>
         </MenuItem>
-        <MenuItem value={NumOfCoresTypes.threePhasesFive}>
+        <MenuItem
+          value={NumOfCoresTypes.threePhasesFive}
+          style={{ whiteSpace: "normal" }}
+        >
           <Box
             sx={{
               display: "flex",

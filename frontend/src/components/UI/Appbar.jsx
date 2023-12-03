@@ -78,7 +78,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
       sx={{ zIndex: theme.zIndex.drawer + 1, position: "relative" }}
     >
       <Toolbar variant="regular">
-        <Box
+        <Container
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -182,7 +182,7 @@ const Appbar = ({ setIsDarkTheme, isDarkTheme }) => {
               LANG
             </Button>
           </Box> */}
-        </Box>
+        </Container>
       </Toolbar>
     </AppBar>
   );

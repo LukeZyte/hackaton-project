@@ -1,4 +1,3 @@
-import "./App.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { lightTheme, darkTheme } from "./utils/theme";
 import Calculator from "./pages/Calculator";

@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 import Footer from "../components/UI/Footer";
 import CalculatorView from "../components/Calculator/CalculatorView";

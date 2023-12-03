@@ -1,11 +1,4 @@
-import {
-  Box,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, TextField, Typography, useTheme } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import { useTranslation } from "react-i18next";

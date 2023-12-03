@@ -99,26 +99,28 @@ const CalculatorView = () => {
             gap: 2,
           }}
         >
-          {calcStage > 0 && (
-            <Button
-              variant="text"
-              color="secondary"
-              startIcon={<ChevronLeftIcon />}
-              onClick={handleBack}
-            >
-              {t("common:back")}
-            </Button>
-          )}
-          {calcStage < 9 && (
-            <Button
-              variant="contained"
-              color="secondary"
-              endIcon={<ChevronRightIcon />}
-              onClick={handleClick}
-            >
-              {t("common:next")}
-            </Button>
-          )}
+          {/* {calcStage > 0 && ( */}
+          <Button
+            disabled={calcStage === 0}
+            variant="text"
+            color="secondary"
+            startIcon={<ChevronLeftIcon />}
+            onClick={handleBack}
+          >
+            {t("common:back")}
+          </Button>
+          {/* )} */}
+          {/* {calcStage < 9 && ( */}
+          <Button
+            disabled={calcStage === 9}
+            variant="contained"
+            color="secondary"
+            endIcon={<ChevronRightIcon />}
+            onClick={handleClick}
+          >
+            {t("common:next")}
+          </Button>
+          {/* )} */}
         </Box>
       </Box>
     </Container>
