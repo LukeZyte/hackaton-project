@@ -1,5 +1,12 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
-import React, { useContext } from "react";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Divider,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
 import {
@@ -11,6 +18,8 @@ const FinalItem = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   const calcValCtx = useContext(CalculatorValuesContext);
+  const [fetchedData, setFetchedData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
@@ -79,6 +88,57 @@ const FinalItem = () => {
           )}
         </Box>
       </Box>
+      {fetchedData && (
+        <>
+          {fetchedData.length === 1 && (
+            <Typography>{fetchedData[0]}</Typography>
+          )}
+          {fetchedData.length > 1 && (
+            <Box sx={{ marginBottom: 4 }}>
+              <Typography
+                variant="h6"
+                fontWeight="bold"
+                sx={{ marginBottom: 1 }}
+              >
+                {fetchedData.length > 1 ? "Wyniki" : "Wynik"}
+              </Typography>
+              {fetchedData[0] && (
+                <Typography>{`Typ kabla: ${fetchedData[0]}`}</Typography>
+              )}
+              {fetchedData[3] && (
+                <>
+                  <a href={fetchedData[3]} target="_blank" rel="noreferrer">
+                    [Link] Nota katalogowa
+                  </a>
+                  <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
+                </>
+              )}
+              {fetchedData[1] && (
+                <Typography>{`Typ kabla: ${fetchedData[1]}`}</Typography>
+              )}
+              {fetchedData[4] && (
+                <>
+                  <a href={fetchedData[4]} target="_blank" rel="noreferrer">
+                    [Link] Nota katalogowa
+                  </a>
+                  <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
+                </>
+              )}
+              {fetchedData[2] && (
+                <Typography>{`Typ kabla: ${fetchedData[2]}`}</Typography>
+              )}
+              {fetchedData[5] && (
+                <>
+                  <a href={fetchedData[5]} target="_blank" rel="noreferrer">
+                    [Link] Nota katalogowa
+                  </a>
+                  <Divider sx={{ marginTop: 2, marginBottom: 2 }} />
+                </>
+              )}
+            </Box>
+          )}
+        </>
+      )}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Button
           sx={{ padding: 2, fontSize: 16, paddingLeft: 8, paddingRight: 8 }}
@@ -99,6 +159,7 @@ const FinalItem = () => {
             };
             console.log(body);
 
+            setIsLoading(true);
             fetch(
               `http://localhost:3001/logic?metal=${body.metal}&izolacja=${body.izolacja}&zyly_obc=${body.zyly_obj["zyly_obc"]}&zyly=${body.zyly_obj["zyly"]}&faza=${body.zyly_obj["faza"]}&sposob_instalacji=${body.sposob_instalacji}&temperatura=${body.temperatura}&rezystancja_cieplna=${body.rezystancja_cieplna}&ilosc_przewodow=${body.ilosc_przewodow}&moc=${body.moc}&prad=${body.prad}&cosphi=${body.cosphi}`,
               {
@@ -106,11 +167,18 @@ const FinalItem = () => {
               }
             )
               .then((res) => res.json())
-              .then((data) => console.log(data))
-              .catch((err) => console.log(err));
+              .then((data) => {
+                setFetchedData(data);
+                console.log(data);
+              })
+              .catch((err) => {
+                setFetchedData("Nie udało się załadować wyniku :(");
+                console.log(err);
+              })
+              .finally(setIsLoading(false));
           }}
         >
-          Zatwiedź
+          {isLoading ? <CircularProgress color="white" /> : "Zatwiedź"}
         </Button>
       </Box>
     </Box>

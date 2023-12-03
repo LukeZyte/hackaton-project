@@ -70,7 +70,7 @@ const CalculatorView = () => {
           }}
         >
           <Typography variant="h5" fontWeight="700" color={"white"}>
-            NKT instal
+            Kalkulator
           </Typography>
         </Box>
         {calcStage === 0 && <MetalTypeItem />}
