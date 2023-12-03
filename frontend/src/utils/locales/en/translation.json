@@ -29,5 +29,6 @@
   "powerLoad": "Load power",
   "load": "Load",
   "aluminum": "Aluminum",
+  "copper": "Copper",
   "numOfWires/circuits": "Number of circuits/wires in 1 bundle"
 }

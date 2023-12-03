@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const MetalTypeItem = () => {
   const calcValCtx = useContext(CalculatorValuesContext);
   const theme = useTheme();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const selectMetalHandler = (event) => {
     console.log(event.target.value);
@@ -59,7 +59,7 @@ const MetalTypeItem = () => {
               gap: 1,
             }}
           >
-            <Typography>{t("common:copper")}</Typography>
+            <Typography>{t("copper")}</Typography>
           </Box>
         </MenuItem>
       </Select>

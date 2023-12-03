@@ -11,11 +11,13 @@ import AmbientTempItem from "./CalcItems/AmbientTempItem";
 import { CalculatorValuesContext } from "../../store/calculatorValues";
 import {
   InstallationTypes,
-  MetalTypes,
+  LoadTypes,
 } from "../../utils/enums/calculator-enums";
 import ThermalResItem from "./CalcItems/ThermalResItem";
 import WiresNumItem from "./CalcItems/WiresNumItem";
 import LoadTypeItem from "./CalcItems/LoadTypeItem";
+import CurrentLoadItem from "./CalcItems/CurrentLoadItem";
+import PowerLoadItem from "./CalcItems/PowerLoadItem";
 
 const CalculatorView = () => {
   const theme = useTheme();
@@ -78,6 +80,33 @@ const CalculatorView = () => {
         {calcStage === 5 && <ThermalResItem />}
         {calcStage === 6 && <WiresNumItem />}
         {calcStage === 7 && <LoadTypeItem />}
+        {calcStage === 8 && calcValCtx.loadType === LoadTypes.current && (
+          <CurrentLoadItem />
+        )}
+        {calcStage === 8 && calcValCtx.loadType === LoadTypes.power && (
+          <PowerLoadItem />
+        )}
+        {calcStage === 9 && (
+          <Button
+            variant="contained"
+            onClick={() => {
+              console.log({
+                metal: calcValCtx.metalType,
+                izolacja: calcValCtx.materialType,
+                zyly_obj: calcValCtx.numLoadedCores,
+                sposob_instalacji: calcValCtx.installationType,
+                temperatura: calcValCtx.ambientTemp,
+                rezystancja_cieplna: calcValCtx.thermalResGround,
+                ilosc_przewodow: calcValCtx.wiresNum,
+                moc: calcValCtx.power,
+                prad: calcValCtx.current,
+                cosphi: calcValCtx.cosphi,
+              });
+            }}
+          >
+            Pokaz wynik wysylany do bazy danych
+          </Button>
+        )}
 
         <Box
           sx={{
@@ -99,7 +128,7 @@ const CalculatorView = () => {
               {t("common:back")}
             </Button>
           )}
-          {calcStage < 7 && (
+          {calcStage < 9 && (
             <Button
               variant="contained"
               color="secondary"

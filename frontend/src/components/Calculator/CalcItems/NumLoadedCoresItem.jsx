@@ -43,6 +43,30 @@ const NumLoadedCoresItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
+      <Box
+        sx={{
+          padding: 2,
+          marginBottom: 2,
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        <Typography>Wprowdzone parametry:</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: 1,
+            marginTop: 0.5,
+          }}
+        >
+          <Typography variant="caption">{`${t("typeOfMetal")}: ${t(
+            calcValCtx.metalType
+          )}`}</Typography>
+          <Typography variant="caption">{`${t("typeOfMaterial")}: ${t(
+            calcValCtx.materialType
+          )}`}</Typography>
+        </Box>
+      </Box>
       <Typography>{t("typeOfMaterial")}</Typography>
       <Select
         value={calcValCtx.numLoadedCores}
@@ -69,9 +93,7 @@ const NumLoadedCoresItem = () => {
               gap: 1,
             }}
           >
-            <Typography>
-              {t("3c")}
-            </Typography>
+            <Typography>{t("3c")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={NumOfCoresTypes.onePhaseTwoCores}>
@@ -83,9 +105,7 @@ const NumLoadedCoresItem = () => {
               gap: 1,
             }}
           >
-            <Typography>
-            {t("3a")}
-            </Typography>
+            <Typography>{t("3a")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={NumOfCoresTypes.threePhasesFour}>
@@ -97,9 +117,7 @@ const NumLoadedCoresItem = () => {
               gap: 1,
             }}
           >
-            <Typography>
-            {t("3b")}
-            </Typography>
+            <Typography>{t("3b")}</Typography>
           </Box>
         </MenuItem>
         <MenuItem value={NumOfCoresTypes.threePhasesFive}>
@@ -111,9 +129,7 @@ const NumLoadedCoresItem = () => {
               gap: 1,
             }}
           >
-            <Typography>
-            {t("3d")}
-            </Typography>
+            <Typography>{t("3d")}</Typography>
           </Box>
         </MenuItem>
       </Select>

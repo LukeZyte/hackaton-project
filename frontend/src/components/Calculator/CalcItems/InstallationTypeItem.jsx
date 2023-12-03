@@ -1,13 +1,16 @@
 import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
 import React, { useContext } from "react";
 import { CalculatorValuesContext } from "../../../store/calculatorValues";
-import { InstallationTypes } from "../../../utils/enums/calculator-enums";
+import {
+  InstallationTypes,
+  NumOfCoresTypes,
+} from "../../../utils/enums/calculator-enums";
 import { useTranslation } from "react-i18next";
 
 const InstallationTypeItem = () => {
   const calcValCtx = useContext(CalculatorValuesContext);
   const theme = useTheme();
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
   const selectInstallationTypeHandler = (event) => {
     console.log(event.target.value);
@@ -32,6 +35,41 @@ const InstallationTypeItem = () => {
 
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
+      <Box
+        sx={{
+          padding: 2,
+          marginBottom: 2,
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        <Typography>Wprowdzone parametry:</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: 1,
+            marginTop: 0.5,
+          }}
+        >
+          <Typography variant="caption">{`${t("typeOfMetal")}: ${t(
+            calcValCtx.metalType
+          )}`}</Typography>
+          <Typography variant="caption">{`${t("typeOfMaterial")}: ${t(
+            calcValCtx.materialType
+          )}`}</Typography>
+          <Typography variant="caption">{`${t("numberOfCores")}: ${t(
+            calcValCtx.numLoadedCores === NumOfCoresTypes.onePhaseTwoCores
+              ? "3a"
+              : calcValCtx.numLoadedCores === NumOfCoresTypes.threePhasesFour
+              ? "3b"
+              : calcValCtx.numLoadedCores === NumOfCoresTypes.threePhasesFive
+              ? "3d"
+              : calcValCtx.numLoadedCores === NumOfCoresTypes.threePhasesSingle
+              ? "3c"
+              : "3c"
+          )}`}</Typography>
+        </Box>
+      </Box>
       <Typography>{t("installationMethod")}</Typography>
 
       <Select

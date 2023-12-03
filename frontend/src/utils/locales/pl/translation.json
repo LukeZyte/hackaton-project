@@ -5,7 +5,7 @@
   "polish": "Polski",
   "typeOfMetal": "Rodzaj metalu",
   "typeOfMaterial": "Rodzaj tworzywa izolacyjnego",
-  "numberOfCores": "Liczba żył przeciążonych",
+  "numberOfCores": "Liczba żył obciążonych",
   "installationMethod": "Sposób instalacji",
   "ambientTemp": "Temperatura otoczenia",
   "groundResistivity": "Rezystywność cieplna gruntu",
@@ -29,5 +29,6 @@
   "powerLoad": "Moc obciążenia",
   "load": "Obciążenie",
   "aluminum": "Aluminium",
+  "copper": "Miedź",
   "numOfWires/circuits": "Ilość obwodów/przewodów znajdujących się w 1 wiązce"
 }

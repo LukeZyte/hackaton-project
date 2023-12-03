@@ -1,0 +1,33 @@
+"filename", "language", "JavaScript", "JSON", "JavaScript JSX", "CSS", "Markdown", "HTML", "comment", "blank", "total"
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\README.md", "Markdown", 0, 0, 0, 0, 38, 0, 0, 33, 71
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\package-lock.json", "JSON", 0, 18536, 0, 0, 0, 0, 0, 1, 18537
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\package.json", "JSON", 0, 47, 0, 0, 0, 0, 0, 1, 48
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\public\index.html", "HTML", 0, 0, 0, 0, 0, 20, 23, 1, 44
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\App.css", "CSS", 0, 0, 0, 33, 0, 0, 0, 6, 39
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\App.js", "JavaScript", 28, 0, 0, 0, 0, 0, 2, 6, 36
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\AmbientTempItem.jsx", "JavaScript JSX", 0, 0, 83, 0, 0, 0, 0, 7, 90
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\CurrentLoadItem.jsx", "JavaScript JSX", 0, 0, 50, 0, 0, 0, 0, 4, 54
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\InstallationTypeItem.jsx", "JavaScript JSX", 0, 0, 187, 0, 0, 0, 0, 6, 193
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\LoadTypeItem.jsx", "JavaScript JSX", 0, 0, 62, 0, 0, 0, 0, 6, 68
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\MaterialTypeItem.jsx", "JavaScript JSX", 0, 0, 142, 0, 0, 0, 0, 6, 148
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\MetalTypeItem.jsx", "JavaScript JSX", 0, 0, 65, 0, 0, 0, 0, 6, 71
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\NumLoadedCoresItem.jsx", "JavaScript JSX", 0, 0, 135, 0, 0, 0, 0, 6, 141
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\PowerLoadItem.jsx", "JavaScript JSX", 0, 0, 52, 0, 0, 0, 0, 4, 56
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\ThermalResItem.jsx", "JavaScript JSX", 0, 0, 55, 0, 0, 0, 0, 5, 60
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalcItems\WiresNumItem.jsx", "JavaScript JSX", 0, 0, 50, 0, 0, 0, 0, 5, 55
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\Calculator\CalculatorView.jsx", "JavaScript JSX", 0, 0, 137, 0, 0, 0, 0, 8, 145
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\UI\Appbar.jsx", "JavaScript JSX", 0, 0, 169, 0, 0, 0, 9, 12, 190
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\components\UI\Footer.jsx", "JavaScript JSX", 0, 0, 97, 0, 0, 0, 0, 3, 100
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\index.css", "CSS", 0, 0, 0, 12, 0, 0, 0, 2, 14
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\index.js", "JavaScript", 18, 0, 0, 0, 0, 0, 0, 4, 22
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\pages\Calculator.jsx", "JavaScript JSX", 0, 0, 13, 0, 0, 0, 0, 3, 16
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\store\calculatorValues.js", "JavaScript", 114, 0, 0, 0, 0, 0, 0, 5, 119
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\store\themeCtx.js", "JavaScript", 2, 0, 0, 0, 0, 0, 0, 2, 4
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\enums\calculator-enums.js", "JavaScript", 66, 0, 0, 0, 0, 0, 2, 8, 76
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\i18n.js", "JavaScript", 21, 0, 0, 0, 0, 0, 0, 3, 24
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\locales\en\common.json", "JSON", 0, 4, 0, 0, 0, 0, 0, 1, 5
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\locales\en\translation.json", "JSON", 0, 34, 0, 0, 0, 0, 0, 1, 35
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\locales\pl\common.json", "JSON", 0, 4, 0, 0, 0, 0, 0, 1, 5
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\locales\pl\translation.json", "JSON", 0, 34, 0, 0, 0, 0, 0, 1, 35
+"c:\PROJEKTY\HACKATHON\hackaton-project\frontend\src\utils\theme.js", "JavaScript", 75, 0, 0, 0, 0, 0, 0, 3, 78
+"Total", "-", 324, 18659, 1297, 45, 38, 20, 36, 160, 20579

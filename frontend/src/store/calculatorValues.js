@@ -19,6 +19,9 @@ export const CalculatorValuesContext = createContext({
   thermalResGround: null,
   wiresNum: null,
   loadType: null,
+  current: null,
+  power: null,
+  cosphi: null,
   changeMetalType: () => {},
   changeMaterialType: () => {},
   changeNumLoadedCores: () => {},
@@ -27,6 +30,9 @@ export const CalculatorValuesContext = createContext({
   changeThermalResGround: () => {},
   changeWiresNum: () => {},
   changeLoadType: () => {},
+  changeCurrent: () => {},
+  changePower: () => {},
+  changeCosphi: () => {},
 });
 
 export const CalculatorValuesProvider = ({ children }) => {
@@ -42,6 +48,9 @@ export const CalculatorValuesProvider = ({ children }) => {
   const [thermalResGround, setThermalResGround] = useState(ThermalResTypes[1]);
   const [wiresNum, setWiresNum] = useState(WiresNumTypes[1]);
   const [loadType, setLoadType] = useState(LoadTypes.current);
+  const [current, setCurrent] = useState("");
+  const [power, setPower] = useState("");
+  const [cosphi, setCosphi] = useState("0.8");
 
   const changeMetalType = (value) => {
     setMetalType(value);
@@ -67,6 +76,15 @@ export const CalculatorValuesProvider = ({ children }) => {
   const changeLoadType = (value) => {
     setLoadType(value);
   };
+  const changeCurrent = (value) => {
+    setCurrent(value);
+  };
+  const changePower = (value) => {
+    setPower(value);
+  };
+  const changeCosphi = (value) => {
+    setCosphi(value);
+  };
 
   const value = {
     metalType: metalType,
@@ -77,6 +95,9 @@ export const CalculatorValuesProvider = ({ children }) => {
     thermalResGround: thermalResGround,
     wiresNum: wiresNum,
     loadType: loadType,
+    current: current,
+    power: power,
+    cosphi: cosphi,
     changeMetalType: changeMetalType,
     changeMaterialType: changeMaterialType,
     changeNumLoadedCores: changeNumLoadedCores,
@@ -85,6 +106,9 @@ export const CalculatorValuesProvider = ({ children }) => {
     changeThermalResGround: changeThermalResGround,
     changeWiresNum: changeWiresNum,
     changeLoadType: changeLoadType,
+    changeCurrent: changeCurrent,
+    changePower: changePower,
+    changeCosphi: changeCosphi,
   };
   return (
     <CalculatorValuesContext.Provider value={value}>

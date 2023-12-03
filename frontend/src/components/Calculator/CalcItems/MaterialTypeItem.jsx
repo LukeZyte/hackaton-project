@@ -1,5 +1,5 @@
 import { Box, MenuItem, Select, Typography, useTheme } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   MaterialTypes,
   MetalTypes,
@@ -23,9 +23,36 @@ const MaterialTypeItem = () => {
     }
   };
 
+  useEffect(() => {
+    if (calcValCtx.metalType === MetalTypes.aluminum) {
+      calcValCtx.changeMaterialType(MaterialTypes.XLPE);
+    }
+  }, []);
+
   return (
     <Box sx={{ padding: 4, paddingTop: 2 }}>
-      <Typography>{t("typeOfMaterial")}</Typography>
+      <Box
+        sx={{
+          padding: 2,
+          marginBottom: 2,
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        <Typography>Wprowdzone parametry:</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: 1,
+            marginTop: 0.5,
+          }}
+        >
+          <Typography variant="caption">{`${t("typeOfMetal")}: ${t(
+            calcValCtx.metalType
+          )}`}</Typography>
+        </Box>
+      </Box>
+      <Typography fontWeight="bold">{t("typeOfMaterial")}</Typography>
       {calcValCtx.metalType === MetalTypes.aluminum ? (
         <Select
           value={calcValCtx.materialType}

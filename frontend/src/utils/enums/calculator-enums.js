@@ -1,12 +1,12 @@
 export const MetalTypes = {
-  copper: "copper",
-  aluminum: "aluminum",
+  copper: "miedź",
+  aluminum: "aluminium",
 };
 
 export const MaterialTypes = {
-  PVC: "PVC",
-  XLPE: "XLPE",
-  BZCA: "B2CA",
+  PVC: "pvc",
+  XLPE: "xlpe",
+  BZCA: "b2ca",
 };
 
 export const NumOfCoresTypes = {

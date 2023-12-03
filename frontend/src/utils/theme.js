@@ -28,14 +28,20 @@ export const lightTheme = createTheme({
         color: "black",
       },
     },
-    // MuiButton: {
-    //   root: {
-
-    //     "&:hover": {
-    //       backgroundColor: theme.palette.prim
-    //     },
-    //    }
-    // }
+    MuiSelect: {
+      defaultProps: {
+        style: {
+          backgroundColor: "white",
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        style: {
+          backgroundColor: "white",
+        },
+      },
+    },
   },
 });
 
@@ -65,6 +71,20 @@ export const darkTheme = createTheme({
     MuiTypography: {
       defaultProps: {
         color: "white",
+      },
+    },
+    MuiSelect: {
+      defaultProps: {
+        style: {
+          backgroundColor: "#222222",
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        style: {
+          backgroundColor: "#222222",
+        },
       },
     },
   },
